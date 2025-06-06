@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>給你的小驚喜</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      background: linear-gradient(#fbeeff, #ffeef2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .start {
+      font-size: 1.8em;
+      color: #b33c6e;
+      cursor: pointer;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #c94f7c;
+      margin-top: 20px;
+      display: none;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .flower {
+      width: 200px;
+      margin: 30px auto;
+      display: none;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .card {
+      background: white;
+      border: 2px solid #c94f7c;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      margin-top: 20px;
+      cursor: pointer;
+      display: none;
+      animation: fadeIn 3s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .message {
+      display: none;
+      margin-top: 20px;
+      background: #fff4fa;
+      border: 1px dashed #c94f7c;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 300px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="start" onclick="revealCard()">嗯~好像有東西!<br><span style="font-size: 0.9em;">（點一下看看）</span></div>
+
+  <h1 id="title">🎓 畢業快樂！</h1>
+
+  <img id="flower" class="flower" src="flower.png" alt="花束">
+
+  <div class="card" id="card" onclick="showMessage()">
+    ㄟˊ 花束中間有一張卡片<br><br><strong>（打開他）</strong>
+  </div>
+
+  <div class="message" id="message">
+    恭喜你畢業！<br><br>
+    想不到轉眼間你就畢業了！<br>
+    無論走到哪裡，都別忘了當初努力的自己。<br>
+    希望你能在未來的日子裡可以開開心心過著每一天！<br>
+    然後...在你的世界裡繼續發展我的煎蛋事業🤣
+  </div>
+
+  <script>
+    function revealCard() {
+      document.querySelector('.start').style.display = 'none';
+      document.getElementById('title').style.display = 'block';
+      document.getElementById('flower').style.display = 'block';
+      document.getElementById('card').style.display = 'block';
+    }
+
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
